@@ -4,12 +4,14 @@
         <p>用户详情</p>
         <p>用户姓名：{{myName}}</p>
         <p>反转姓名：{{ switchName() }}</p>
+        <p>用户年龄：{{userAge}}</p>
         <!--<button @click="resetName">重置姓名</button> -->
         <button @click="resetName">重置姓名</button>
     </div>
 </template>
 
 <script>
+    import {eventBus} from '../main'
     export default {
         // props:['myName'],
         props:{
@@ -17,7 +19,8 @@
                 type:[String,Number],//type:String,
                 required:false,
                 default:'默认姓名'
-            }
+            },
+            userAge:Number
             // ,
             // childrenRequest:{
             //     type:Function
@@ -32,7 +35,14 @@
                 this.myName="MarkTo--reset";
                 this.$emit('nameWasReset',this.myName);
             }
-        }
+        },
+        //生命周期
+        created(){
+            eventBus.$on('ageWasEdited',(age)=>{
+                this.userAge = age;
+            })
+        },
+        
     }
 </script>
 
