@@ -1,5 +1,5 @@
 <template>
     <div>
-        Footer template
+        Author.vue
     </div>
 </template>
