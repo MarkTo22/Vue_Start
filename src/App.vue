@@ -11,9 +11,11 @@
             {{selectedComponent}}
 
             <!--选中的组件-->
+            <keep-alive>
             <component :is="selectedComponent">
                 <p>Default content</p>
             </component>
+            </keep-alive>
 
             <!--<app-quote>
                 <h1 slot="title">{{quoteTitle}}</h1>
