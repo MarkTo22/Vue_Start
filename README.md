@@ -1,5 +1,11 @@
 this is for Vue-component-communication!
 
+first:
+	cnpm install -g vue-cli
+	vue init webpack-simple my-pro
+    cd my-pro  --->  npm install
+	npm run dev
+
 content:
     1. A componentized UI layout, cover contains UserDetail and UserEdit under User group
 Need to transfer data from the User the parent component to the child components, through property transfer in the form of: prop = "data", need to receive in UserDetail child component properties, need through the props: [' prop] to receive property, expression for display by interpolation operation;
