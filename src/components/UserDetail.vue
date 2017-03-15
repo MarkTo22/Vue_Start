@@ -4,7 +4,8 @@
         <p>用户详情</p>
         <p>用户姓名：{{myName}}</p>
         <p>反转姓名：{{ switchName() }}</p>
-        <!--<button @click="resetName">重置姓名</button>-->
+        <!--<button @click="resetName">重置姓名</button> -->
+        <button @click="resetName">重置姓名</button>
     </div>
 </template>
 
@@ -28,6 +29,8 @@
             },
             resetName(){
                 //this.childrenRequest('MarkTo--reset');
+                this.myName="MarkTo--reset";
+                this.$emit('nameWasReset',this.myName);
             }
         }
     }
